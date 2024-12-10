@@ -1,0 +1,362 @@
+/* 
+
+Table of Content 
+
+1. Global Styles
+2. Section landing view, Navigation,Background,Related Media Querries
+3. Header section, Animated arrow, Related Media Querries 
+4. About me section
+5. What I do section
+6. My skills section
+7. Portfolio Section
+8. Contact Section
+9. Footer section
+
+*/
+
+/* 1. Global Styles */
+
+/* Imported Google fonts */
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,500&display=swap');
+ 
+
+/* Links color */
+a {
+    color: #fff;
+    font-size: 1.5rem !important;
+    font-family: Poppins, sans-serif;
+}
+
+/* Links color on hover */
+a:hover {
+    color: #FBBC04;
+}
+
+/* Styling to paragraphs on whole page */
+p {
+    font-family: Poppins, sans-serif;
+    font-weight: 300;
+    padding: 1rem;
+}
+
+/* Styling to all h4 classes */
+.h3 {
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+/* Clears all padding left and right  on collumns */
+.col-12,
+.col-md-6 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Styling to h5 and h6, classes  */
+.h5,
+h5,
+.h6 {
+    font-family: Poppins, sans-serif;
+    font-weight: 300;
+}
+
+/* Set default top and bottom padding for all sections title */
+.about-me,
+.what-i-do,
+.my-skills,
+.portfolio,
+.contact {
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+}
+
+/* change background color on portfolio and about me sections */
+#portfolio,
+#about-me {
+    background-color: rgb(241, 241, 241);
+}
+
+
+/* 2. Section landing view, Navigation,Background, Related Custom Media Querries */
+
+
+/* Sets responsive background image covering 100% viewport height */
+.section-landing-view {
+    background: url('../images/laptop-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/* Styling to the name at the top left corner in navigation bar */
+.navbar-brand {
+    font-family: Poppins, sans-serif;
+    font-weight: 700;
+    word-spacing: 3px;
+}
+
+/* sets color and styling to the links in the navbar */
+.navbar-nav .nav-link {
+    color: rgb(255, 255, 255);
+    font-family: Poppins, sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+}
+
+/*  Change the color of the links on hover */
+#mainNav .navbar-nav li.nav-item a.nav-link:hover {
+    color: #FBBC04;
+}
+
+/*sets transparency to the navigation upon landing or when on top of the page */
+.bg-primary {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+/* Add black background to the mobile navbar and smooth transiton to it */
+nav.black {
+    background: rgb(32, 32, 32);
+    transition: 1s;
+}
+
+@media only screen and (max-width: 991px) {
+    #mainNav .navbar-nav li.nav-item a.nav-link {
+        background: rgb(32, 32, 32);
+        text-align: center;
+    }
+}
+
+/* 3. Header section */
+
+/* position the header near center of the viewport */
+header.masthead {
+    padding-top: 45vh;
+}
+/* Styling for the header and its linear background */
+header.masthead h2 {
+    font-size: 33px;
+    line-height: 1.5em;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(32, 32, 32) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Animated arrow */
+/* credit rafael amorim https://codepen.io/raf187/pen/BvgGRQ */
+
+/* Sets the position of the arrow */
+.arrow {
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* creates 3 arrows from the borders of the block */
+.arrow span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.2);
+    border-right: 5px solid rgba(0, 0, 0, 0.2);
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 3s infinite;
+}
+
+.arrow span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+/* creates animation effect of the arrows */
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+
+/* sets the position and sizing to the header for screen sizes  below 550px  */
+@media only screen and (max-width: 550px) {
+    header.masthead h2 {
+        font-size: 24px;
+        line-height: 2rem;
+    }
+    header.masthead {
+        padding-top: 40vh;
+    }
+}
+
+/* sets the position to the header for screen sizes below 400px */
+@media only screen and (max-width: 400px) {
+    header.masthead {
+        padding-top: 35vh;
+    }
+}
+
+
+/* 4. About me Section */
+
+/* sets the maximum width and center position to the row for screen bigger than 992px, */ 
+/* it won't span over large screens */
+@media only screen and (min-width: 992px) {
+    #about-me .row {
+        width: 768px;
+        margin: auto;
+    }
+}
+
+/* 5. What I do section */
+
+/* Sets responsive background image covering 100% viewport height */
+#what-i-do .container-fluid {
+    background: url('../images/server.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* styling to all 3 columns in What I do section */
+/* set the rounded borders, maximum width and spacing */
+#what-i-do .collumn-1,
+.collumn-2,
+.collumn-3 {
+    width: 90%;
+    border-radius: 20px;
+    padding: 1rem;
+    margin-top: 10vh;
+    margin-bottom: 15vh;
+}
+
+/* top padding for icons in each card */
+#what-i-do img {
+    padding-top: 3%;
+}
+
+/* Sets the maximum width and centered position for the cards for screens over 992px, */ 
+/* so the container will not takes the full width on the the large screens */
+@media only screen and (min-width: 992px) {
+    #what-i-do .row {
+        width: 85%;
+        margin: auto;
+    }
+    #what-i-do .h5 {
+        margin: 10%;
+    }
+}
+/* sets margin and maximum width of columns when columns are stacked on top of each other */
+/* on screens smaller than 991px */
+@media only screen and (max-width: 991px) {
+    #what-i-do .collumn-1,
+    .collumn-2,
+    .collumn-3 {
+        margin-top: 10px;
+        margin-bottom: 25px;
+        width: 85%
+    }
+}
+
+/* 6. My skills section */
+
+/* creates nice linear gradient for the progress bar background */
+#my-skills .row,
+.design,
+.development,
+.marketing {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.993), rgba(0, 0, 0, 0.5) 100%);
+}
+
+/* sets the width of progress bar on devices with screen bigger than 768px */ 
+/* so they won't take the whole width of the container */
+@media only screen and (min-width: 768px) {
+    #my-skills>div>div.row.design>div:nth-child(1)>div.container,
+    #my-skills>div>div.row.development>div:nth-child(2)>div.container,
+    #my-skills>div>div.row.marketing>div:nth-child(1)>div.container {
+        width: 70%;
+    }
+}   
+
+/* 7. Portfolio section */
+
+/* sets the color and position of the block with text overlying the images */
+.carousel-caption {
+    bottom: 70px;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* 8. Contact section */
+
+/* colors of the phone and email links in the contact details section */
+#contact>div:nth-child(2)>div>div.col-12.col-md-4>a:nth-child(10),
+#contact>div:nth-child(2)>div>div.col-12.col-md-4>a:nth-child(14) {
+    color: #17a2b8;
+}
+
+/* change color of the links on hover */
+#contact>div:nth-child(2)>div>div.col-12.col-md-4>a:nth-child(10):hover,
+#contact>div:nth-child(2)>div>div.col-12.col-md-4>a:nth-child(14):hover {
+    color: #FBBC04;
+}
+
+/* change default jumbotron background color to transparent for all screen sizes */
+#contact>div:nth-child(2)>div>div.col-12.col-md-8>div {
+    background-color: transparent;
+}
+
+.jumbotron {
+    padding: 3rem 2rem;
+}
+
+/* color of the map icon in the contact details section */
+i.fas:nth-child(2) {
+    color: #28a745;
+}
+
+/* remove extra white space between jumbotron and contact section when stacked on smaller screen sizes */
+@media only screen and (max-width: 767px) {
+    .jumbotron {
+        margin-bottom: 0;
+    }
+}
+
+/* 9. Footer section */
+
+/* add padding and set font size to the "Social" title in the footer */
+.body > footer > div:nth-child(1) > div > div > h5 {
+    padding: 15px;
+    font-size: 1.2rem;
+}
+
+/* size of the icons in the footer */
+.fab {
+    font-size: 2.2rem;
+}
+
+/* set the links smaller in the footer */
+body > footer > div:nth-child(2) > div:nth-child(1) > div > a {
+    font-size: 1rem !important;
+}
+
+/* sets the background color of the footer to match the navbar color */
+footer {
+    background-color:  rgb(32, 32, 32) !important;
+}
+
+/* removes padding from the bottom to set copyright info closer to the bottom */
+footer p {
+    margin-bottom: 0;
+}
